@@ -25,23 +25,32 @@
 
 **Stamp Philatex Processor** is an intelligent automation tool that revolutionizes how stamp collectors process their scanned images. Using state-of-the-art YOLOv8 instance segmentation, it automatically detects individual stamps, aligns tilted ones, and crops them with professional green textured borders - ready for eBay listings or digital catalogs.
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  BEFORE: Messy scan with multiple tilted stamps                 │
-│  ┌──────┐   ┌──────┐                                             │
-│  │ /‾‾\ │   │ \__/ │   ← Random angles, uneven spacing         │
-│  │ \__/ │   │ /‾‾\ │                                            │
-│  └──────┘   └──────┘                                             │
-└─────────────────────────────────────────────────────────────────┘
-                            ⬇️
-┌─────────────────────────────────────────────────────────────────┐
-│  AFTER: Perfectly aligned, cropped, and bordered stamps         │
-│  ╔═══════════╗   ╔═══════════╗                                  │
-│  ║ 🖼️ Stamp  ║   ║ 🖼️ Stamp  ║   ← Aligned, textured borders   │
-│  ║           ║   ║           │     Ready for eBay!              │
-│  ╚═══════════╝   ╚═══════════╝                                  │
-└─────────────────────────────────────────────────────────────────┘
-```
+### 🔄 Workflow Transformation
+
+<table align="center">
+  <tr>
+    <td align="center"><b>Before Processing</b></td>
+    <td align="center"><b>After Processing</b></td>
+  </tr>
+  <tr>
+    <td><img src="assets/Fromhere.jpeg" alt="Before processing - messy stamp scan" width="400"/></td>
+    <td><img src="assets/Tohere.jpg" alt="After processing - aligned and cropped stamps" width="400"/></td>
+  </tr>
+  <tr>
+    <td align="center"><em>Messy scan with multiple tilted stamps</em></td>
+    <td align="center"><em>Perfectly aligned, cropped with textured borders</em></td>
+  </tr>
+</table>
+
+### 💻 Application Interface
+
+<p align="center">
+  <img src="assets/2026-03-25_00-09-40.png" alt="Stamp Philatex Processor GUI during operation" width="700"/>
+</p>
+
+<p align="center"><em>The professional PyQt6 interface showing real-time stamp detection and processing</em></p>
+
+---
 
 ---
 
@@ -259,7 +268,9 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## 📝 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is proprietary software. All rights reserved. See the [LICENSE](LICENSE) file for details.
+
+**Note:** This is NOT open source or free software. Commercial use requires a separate license.
 
 ---
 
