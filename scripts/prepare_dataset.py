@@ -1,5 +1,5 @@
 """
-Stamp Detection Claude - Dataset Preparation Script
+Stamp Philatex Processor - Dataset Preparation Script
 Organizes images and labels into YOLO training format.
 """
 

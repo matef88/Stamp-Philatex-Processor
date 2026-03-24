@@ -1026,7 +1026,7 @@ class StampProcessor:
 def main():
     """Main entry point for command-line usage."""
     parser = argparse.ArgumentParser(
-        description="Stamp Detection Claude - Process stamp images"
+        description="Stamp Philatex Processor - Process stamp images"
     )
     parser.add_argument(
         "--input", "-i",

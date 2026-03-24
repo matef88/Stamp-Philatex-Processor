@@ -262,12 +262,12 @@ def build():
 
             # Create ZIP file
             print("\nCreating ZIP archive...")
-            zip_path = desktop_path / "StampDetectionClaude_Portable.zip"
+            zip_path = desktop_path / "StampPhilatexProcessor_Portable.zip"
             shutil.make_archive(
                 str(zip_path.with_suffix('')),  # Remove .zip as make_archive adds it
                 'zip',
                 dist_dir,
-                'StampDetectionClaude'
+                'StampPhilatexProcessor'
             )
             zip_size = zip_path.stat().st_size / (1024*1024)
             print(f"ZIP created: {zip_path} ({zip_size:.1f} MB)")

@@ -1,5 +1,5 @@
 """
-Stamp Detection Claude - Duplicate Detection Module
+Stamp Philatex Processor - Duplicate Detection Module
 Detects duplicate stamps across batches and within batches.
 """
 

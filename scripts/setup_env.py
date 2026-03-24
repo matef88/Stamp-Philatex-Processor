@@ -1,5 +1,5 @@
 """
-Stamp Detection Claude - Robust Environment Setup Script
+Stamp Philatex Processor - Robust Environment Setup Script
 Usage: python setup_env.py
 
 1. Creates a local virtual environment (.venv) if missing
@@ -46,7 +46,7 @@ def get_python_exe(venv_path):
 
 def main():
     print("=" * 60)
-    print(" Stamp Detection Claude - Environment Setup")
+    print(" Stamp Philatex Processor - Environment Setup")
     print(f" Python: {sys.version}")
     print("=" * 60)
 

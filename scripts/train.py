@@ -1,5 +1,5 @@
 """
-Stamp Detection Claude - Model Training Script
+Stamp Philatex Processor - Model Training Script
 Trains YOLOv8 segmentation model for stamp detection.
 Optimized for AMD GPU via DirectML.
 """

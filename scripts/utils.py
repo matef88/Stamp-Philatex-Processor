@@ -1,5 +1,5 @@
 """
-Stamp Detection Claude - Shared Utilities
+Stamp Philatex Processor - Shared Utilities
 Common helper functions used across all scripts.
 """
 

@@ -1,6 +1,6 @@
 @echo off
 REM ============================================================
-REM  Stamp Detection Claude - Quick Setup (One-Click Install)
+REM  Stamp Philatex Processor - Quick Setup (One-Click Install)
 REM ============================================================
 REM
 REM This script automates the complete environment setup.
@@ -20,7 +20,7 @@ REM ============================================================
 
 echo.
 echo ============================================================
-echo   Stamp Detection Claude - Quick Setup
+echo   Stamp Philatex Processor - Quick Setup
 echo ============================================================
 echo.
 echo This will automatically set up your development environment.

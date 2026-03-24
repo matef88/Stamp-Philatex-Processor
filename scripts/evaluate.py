@@ -1,5 +1,5 @@
 """
-Stamp Detection Claude - Model Evaluation Script
+Stamp Philatex Processor - Model Evaluation Script
 Evaluates trained model performance on validation/test sets.
 """
 
