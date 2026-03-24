@@ -1,0 +1,54 @@
+Stamp Philatex Processor - Proprietary License
+==============================================
+
+Copyright (c) 2025 Stamp Philatex Processor. All Rights Reserved.
+
+This software and associated documentation files (the "Software") are the 
+proprietary property of the author and are protected by copyright laws and 
+international treaty provisions.
+
+STRICTLY PROHIBITED:
+--------------------
+You may NOT:
+1. Copy, reproduce, or distribute the Software
+2. Modify, adapt, translate, or create derivative works
+3. Reverse engineer, decompile, or disassemble the Software
+4. Sell, rent, lease, license, or sublicense the Software
+5. Use the Software for any commercial purpose without written permission
+6. Remove or alter any proprietary notices, labels, or marks
+7. Use the Software in any manner that violates applicable laws
+
+PERMITTED USE:
+--------------
+You may:
+1. View the source code for educational and learning purposes only
+2. Use the Software personally with written permission from the author
+3. Fork the repository for contribution purposes (subject to acceptance)
+
+COMMERCIAL USE:
+---------------
+For commercial licensing, business inquiries, or permissions:
+Please contact the author to obtain a proper license.
+
+NO WARRANTY:
+------------
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Third-Party Components:
+-----------------------
+This software uses the following open-source libraries, each governed by their respective licenses:
+
+- Ultralytics YOLOv8 - AGPL-3.0 License
+- PyTorch - BSD 3-Clause License  
+- OpenCV - Apache 2.0 License
+- PyQt6 - GPL v3 License
+
+---
+
+For licensing inquiries, please open an issue on GitHub.

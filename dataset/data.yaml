@@ -1,0 +1,12 @@
+# Stamp Detection Dataset Configuration
+# YOLOv8 Segmentation Format
+
+# Dataset paths (relative to this file)
+path: .
+train: train/images
+val: valid/images
+test: test/images
+
+# Classes
+nc: 1  # Number of classes
+names: ['stamp']  # Class names

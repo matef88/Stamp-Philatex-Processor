@@ -1,0 +1,214 @@
+# Stamp Philatex Processor - Git Ignore File
+
+# =============================================================================
+# PYTHON
+# =============================================================================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec.bak
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# =============================================================================
+# VIRTUAL ENVIRONMENTS
+# =============================================================================
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+stamp_env/
+
+# =============================================================================
+# IDE / EDITORS
+# =============================================================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+
+# Sublime Text
+*.sublime-workspace
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# =============================================================================
+# PROJECT SPECIFIC
+# =============================================================================
+# Output directories
+output/
+crops/
+visuals/
+reports/
+duplicates/
+
+# Database files (user-specific)
+database/*.db
+database/*.sqlite
+
+# Model weights (large files)
+models/
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Training runs
+runs/
+wandb/
+
+# Raw data and datasets (too large for git)
+dataset/train/
+dataset/valid/
+dataset/test/
+dataset/*.zip
+dataset/*.cache
+raw_data/
+
+# Texture previews (generated)
+texture_previews/
+
+# Logs
+*.log
+logs/
+
+# =============================================================================
+# SYSTEM FILES
+# =============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# TEMPORARY FILES
+# =============================================================================
+*.tmp
+*.temp
+*.swp
+*.swo
+*.bak
+*.backup
+*~
+
+# =============================================================================
+# BUILD OUTPUTS
+# =============================================================================
+build/
+dist/
+*.exe
+*.msi
+installer/Output/
+StampPhilatexProcessor_*.zip
+StampPhilatexProcessor_*.exe
+
+# =============================================================================
+# MISCELLANEOUS
+# =============================================================================
+# Secrets and credentials
+*.env
+*.secret
+credentials.yaml
+secrets.yaml
+
+# Large media files
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# Archive files (usually downloaded datasets)
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Claude AI project files
+.claude/
+
+# Google Drive sync files
+*.gdoc
+*.gsheet
+
+# Temporary test files
+test_output/
+temp/
+tmp/
+
+# Garbage files
+=6.0
+=8.0.0
+nul

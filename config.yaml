@@ -1,0 +1,227 @@
+# Stamp Philatex Processor - Configuration File
+# Enhanced for AMD GPU + iPhone workflow
+
+# =============================================================================
+# HARDWARE SETTINGS
+# =============================================================================
+hardware:
+  # Device options: "cpu", "cuda" (NVIDIA), "directml" (AMD Windows), "mps" (Apple)
+  device: "directml"
+
+  # Batch size for parallel processing (adjust based on VRAM)
+  # Your 32GB shared VRAM can handle 8-16 comfortably
+  batch_size: 8
+
+  # Number of data loading workers
+  num_workers: 4
+
+# =============================================================================
+# INPUT SETTINGS
+# =============================================================================
+input:
+  # Supported image formats (including iPhone HEIC)
+  supported_formats: [".jpg", ".jpeg", ".png", ".heic", ".heif", ".bmp", ".tiff", ".webp"]
+
+  # Automatically convert HEIC to JPG for processing
+  # This runs as a batch preprocessing step before detection
+  auto_convert_heic: true
+
+  # Delete original HEIC files after successful conversion to JPG
+  # WARNING: Set to false if you want to keep original HEIC files as backup
+  # Recommended: true (avoids duplicates and saves disk space)
+  delete_heic_after_convert: true
+
+  # JPEG quality for HEIC conversion (1-100)
+  # Higher = better quality but larger files
+  # Recommended: 95 (near-lossless quality)
+  heic_conversion_quality: 95
+
+  # Background type optimization
+  # Options: "dark" (black paper), "light" (white paper), "mixed"
+  background_type: "dark"
+
+# =============================================================================
+# PATHS
+# =============================================================================
+paths:
+  # Training dataset location
+  dataset: "dataset"
+  images: "dataset/images"
+  labels: "dataset/labels"
+
+  # Output directories
+  output: "output"
+  crops: "output/crops"
+  visuals: "output/visuals"
+  reports: "output/reports"
+
+  # Model storage
+  models: "models"
+  model_weights: "models/stamp_detector_seg/weights/best.pt"
+
+  # Database for duplicate detection
+  database: "database/stamps.db"
+
+  # Assets
+  assets: "assets"
+  background_texture: "assets/green_texture.jpg"
+
+# =============================================================================
+# DETECTION SETTINGS (YOLOv8-seg)
+# =============================================================================
+detection:
+  # Task type - MUST be "segment" for instance segmentation
+  task: "segment"
+
+  # Confidence threshold (0.0 - 1.0)
+  # Lower = more detections but more false positives
+  # Higher = fewer detections but more accurate
+  confidence_threshold: 0.5
+
+  # IoU threshold for Non-Max Suppression
+  iou_threshold: 0.45
+
+  # Input image size for model (640 is standard for YOLOv8)
+  img_size: 640
+
+  # Minimum stamp area in pixels (filters out noise/tiny detections)
+  min_stamp_area: 5000
+
+# =============================================================================
+# PROCESSING SETTINGS
+# =============================================================================
+processing:
+  # Margin Step 1: Expansion from original image
+  # Adds surrounding context (paper edges, etc.)
+  expand_margin_percent: 0.05  # 5%
+
+  # Margin Step 2: Textured border addition
+  # Adds green texture frame around the stamp
+  texture_margin_percent: 0.10  # 10%
+
+  # Aspect ratio normalization
+  # Prevents long thin strips by adding texture padding
+  max_aspect_ratio: 2.0
+  normalize_aspect_ratio: true
+
+  # Rotation correction (deskewing)
+  rotation_correction: true
+
+  # Maximum rotation angle to correct (prevents flipping)
+  max_rotation_angle: 45
+
+  # Output format and quality
+  output_format: "jpg"
+  output_quality: 95  # 1-100 (95 is good balance of quality/size)
+
+  # eBay optimization settings
+  ebay_max_dimension: 1600  # eBay recommended max dimension
+  preserve_aspect_ratio: true
+
+  # Visual options (debug)
+  show_alignment_line: false  # Enable in GUI when debugging alignment
+  show_segmentation_points: true
+  save_visuals: true
+
+# =============================================================================
+# BACKGROUND SETTINGS
+# =============================================================================
+background:
+  # Path to texture image
+  texture_path: "assets/green_texture.jpg"
+
+  # Fallback color if texture not found (BGR format for OpenCV)
+  color: [51, 112, 68]  # Green
+
+  # Texture noise level for generated textures
+  noise_level: 10
+
+# =============================================================================
+# DUPLICATE DETECTION
+# =============================================================================
+duplicates:
+  # Enable/disable duplicate detection
+  enabled: true
+
+  # Hash algorithm: "phash" (perceptual), "dhash" (difference), "ahash" (average)
+  hash_algorithm: "phash"
+
+  # Similarity threshold (Hamming distance)
+  # Lower = stricter matching (fewer false positives)
+  # Higher = looser matching (catches more variations)
+  # Recommended: 10 for pHash
+  similarity_threshold: 10
+
+  # Check for duplicates across previous batches
+  check_cross_batch: true
+
+  # Check for duplicates within current batch
+  check_within_batch: true
+
+  # Action when duplicate found: "skip", "flag", "move"
+  duplicate_action: "flag"
+
+  # Directory for flagged duplicates
+  duplicates_folder: "output/duplicates"
+
+# =============================================================================
+# GUI SETTINGS
+# =============================================================================
+gui:
+  # Theme: "dark", "light", "system"
+  theme: "dark"
+
+  # Enable preview panel
+  preview_enabled: true
+
+  # Show confidence scores in results
+  show_confidence: true
+
+  # Auto-scroll to latest processed image
+  auto_scroll: true
+
+  # Thumbnail size in results grid
+  thumbnail_size: 150
+
+  # Window default size
+  window_width: 1400
+  window_height: 900
+
+# =============================================================================
+# TRAINING SETTINGS
+# =============================================================================
+training:
+  # Base model for transfer learning
+  base_model: "yolov8n-seg.pt"
+
+  # Training epochs
+  epochs: 100
+
+  # Batch size (adjust for GPU memory)
+  batch_size: 16
+
+  # Image size for training
+  img_size: 640
+
+  # Data augmentation
+  augmentation:
+    horizontal_flip: true
+    vertical_flip: false
+    rotation: 15  # degrees
+    scale: 0.2    # scale variation
+    mosaic: true
+    mixup: 0.1
+
+# =============================================================================
+# LOGGING
+# =============================================================================
+logging:
+  # Log level: DEBUG, INFO, WARNING, ERROR
+  level: "INFO"
+
+  # Save logs to file
+  save_to_file: true
+  log_file: "output/processing.log"
+
+  # Log format
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
