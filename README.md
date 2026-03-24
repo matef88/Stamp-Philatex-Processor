@@ -273,11 +273,14 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 <div align="center">
-
+    
+![Most Used Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=matef88&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=58A6FF&text_color=C9D1D9&langs_count=8&hide=css,html&custom_title=Most%20Used%20Languages)
+    
 **Built with ❤️ for stamp collectors worldwide**
 
 ⭐ Star this repo if you find it useful! ⭐
 
 [Report Bug](https://github.com/matef88/Stamp-Philatex-Processor/issues) · [Request Feature](https://github.com/matef88/Stamp-Philatex-Processor/issues)
-
 </div>
+
+
